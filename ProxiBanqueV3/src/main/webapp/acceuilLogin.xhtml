@@ -25,18 +25,18 @@ xmlns:f="http://java.sun.com/jsf/core"
 					cellspacing="100">
 
 					<h:outputLabel value="Login : " />
-					<h:inputText value="#{beanlogin.login.identifiant}" required="true"
+					<h:inputText value="#{beanconseiller.login.identifiant}" required="true"
 						id="login" styleClass="inputtext" />
 					<h:message for="login" />
 
 					<h:outputLabel value="Mot de passe : " />
-					<h:inputText value="#{beanlogin.login.motDePasse}" required="true"
+					<h:inputText value="#{beanconseiller.login.motDePasse}" required="true"
 						id="MotDePasse" styleClass="inputtext" />
 					<h:message for="MotDePasse" />
 
 					<h:panelGroup style="display:block; text-align:center">
 						<h:commandButton value="Connexion"
-							action="#{beanlogin.verifLogin}" />
+							action="#{beanconseiller.verifLogin}" />
 					</h:panelGroup>
 
 				</h:panelGrid> 

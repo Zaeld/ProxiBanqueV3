@@ -11,17 +11,16 @@ import domaine.Login;
 import service.ClientService;
 import service.LoginService;
 
-@ManagedBean(name = "beanlogin")
+@ManagedBean(name = "beanconseiller")
 @SessionScoped
-public class BeanLogin {
+public class BeanConseiller {
 	private Login login = new Login();
 	LoginService service = new LoginService();
 	ClientService serviceClient = new ClientService();
 	Client client = new Client();
-
 	private Conseiller conseiller = new Conseiller();
 
-	public BeanLogin() {
+	public BeanConseiller() {
 		super();
 
 	}
@@ -69,7 +68,6 @@ public class BeanLogin {
 
 	public List<Client> afficherListeClients() {
 		List<Client> listeClients = serviceClient.getAllClientConseiller(this.conseiller);
-	
 		return listeClients;
 	}
 }

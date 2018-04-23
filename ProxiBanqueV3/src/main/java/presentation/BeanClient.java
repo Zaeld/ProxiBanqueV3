@@ -42,7 +42,7 @@ public class BeanClient {
 	}
 
 	public Object modifierClient(Client client) {
-		setClient(client);
+		this.setClient(client);
 		return "modifierClient";
 	}
 
@@ -54,7 +54,7 @@ public class BeanClient {
 	}
 
 	public Object updateClient() {
-		Client test = new Client();
+		Client test;
 		test = service.updateClient(client);
 		if (test != null) {
 			return "operationreussie";
@@ -71,12 +71,12 @@ public class BeanClient {
 	}
 
 	public Object afficherClient(Client client) {
-		setClient(client);
+		this.setClient(client);
 		return "afficherClient";
 	}
 
 	public Object virement(Client client) {
-		setClient(client);
+		this.setClient(client);
 		return "virement";
 	}
 
