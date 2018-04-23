@@ -171,13 +171,13 @@ public class ClientDAO {
 			// de supprimer les comptes du client avant de le supprimer car la table
 			// 'compte' est dï¿½pendante de la table 'client'
 
-			String s = "DELETE from compte where idClient = " + client.getIdClient();
+			String s = "DELETE FROM compte where idClient = " + client.getIdClient();
 
 			// exï¿½cution de la requï¿½te
 			i = stmt.executeUpdate(s);
 
 			// Affectation ï¿½ la chaine de caractï¿½re s de la requï¿½te SQL
-			s = "DELETE from client where idClient = " + client.getIdClient();
+			s = "DELETE FROM client where idClient = " + client.getIdClient();
 
 			// exï¿½cution de la requï¿½te
 			i = stmt.executeUpdate(s);
@@ -206,7 +206,7 @@ public class ClientDAO {
 			Statement stmt = Connexion.connexion().createStatement(); // Crï¿½ation d'un objet de type Statement
 
 			// Affectation ï¿½ la chaine de caractï¿½re s de la requï¿½te SQL
-			String s = "Select * from Client";
+			String s = "SELECT * FROM client";
 
 			// exï¿½cution de la requï¿½te
 			ResultSet rs = stmt.executeQuery(s);
@@ -240,7 +240,7 @@ public class ClientDAO {
 			Statement stmt = Connexion.connexion().createStatement(); // Crï¿½ation d'un objet de type Statement
 
 			// Affectation ï¿½ la chaine de caractï¿½re s de la requï¿½te SQL
-			String s = "Select * from Client where idConseiller = " + conseiller.getIdConseiller();
+			String s = "SELECT * FROM client WHERE idConseiller = " + conseiller.getIdConseiller();
 
 			// exï¿½cution de la requï¿½te
 			ResultSet rs = stmt.executeQuery(s);

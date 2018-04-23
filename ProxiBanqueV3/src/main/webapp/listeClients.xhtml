@@ -20,27 +20,82 @@
 					<h:outputText
 						value="Bonjour #{beanconseiller.conseiller.prenom} #{beanconseiller.conseiller.nom} " />
 				</b:container>
-				<ul>
-					<h:panelGrid id="panel" columns="3" cellpadding="100"
-						cellspacing="100">
-						<ui:repeat value="#{beanconseiller.afficherListeClients()}"
-							var="client">
 
-							<h:form>
-								<h:outputText value="#{client.nom}" />
-								<h:commandButton action="#{beanclient.modifierClient(client)}"
-									value="Modifier" styleClass="richButton" />
-								<h:commandButton action="#{beanclient.deleteClient(client)}"
-									value="Supprimer" styleClass="richButton" />
-								<h:commandButton action="#{beanclient.afficherClient(client)}"
-									value="Afficher les informations comptes" styleClass="richButton" />
-									<h:commandButton action="#{beanclient.virement(client)}"
-									value="Faire un virement" styleClass="richButton" />
-							</h:form>
-						</ui:repeat>
-					</h:panelGrid>
 
-				</ul>
+				<!-- ==== Formulaire JSF (besoin pour imbriquer h:commandLink) ==== -->
+				<h:form>
+					<!-- ==== Table JSF ==== -->
+					<!-- ==== List clients ==== -->
+					<h:dataTable value="#{beanconseiller.afficherListeClients()}"
+						var="item" styleClass="order-table"
+						headerClass="order-table-header"
+						rowClasses="order-table-odd-row,order-table-even-row">
+
+						<h:column>
+							<!-- column header -->
+							<f:facet name="header">Nom</f:facet>
+							<!-- row record -->
+							<h:outputText value="#{item.nom}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Prenom</f:facet>
+							<h:outputText value="#{item.prenom}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Mail</f:facet>
+							<h:outputText value="#{item.email}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Telephone</f:facet>
+							<h:outputText value="#{item.telephone}" />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header"> Adresse </f:facet>
+							<h:outputText value="#{item.adresse}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header"> Ville </f:facet>
+							<h:outputText value="#{item.ville}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header"> Code postal  </f:facet>
+							<h:outputText value="#{item.codePostal}" />
+						</h:column>
+
+						<!-- ==== Lien: Liste comptes client ==== -->
+						<!-- ==== RQ: nom methode inexact... ==== -->
+						<h:column>
+							<f:facet name="header"></f:facet>
+							<h:commandButton value="Liste de comptes"
+								action="#{beanclient.afficherClient(item)}" />
+						</h:column>
+						<!-- ==== Lien: Modifier client ==== -->
+						<h:column>
+							<f:facet name="header"></f:facet>
+							<h:commandLink value="Modifier"
+								action="#{beanclient.modifierClient(item)}" />
+						</h:column>
+						<!-- ==== Lien: Supprimer client ==== -->
+						<h:column>
+							<f:facet name="header"></f:facet>
+							<h:commandLink value="Supprimer"
+								action="#{beanclient.deleteClient(item)}" />
+						</h:column>
+
+
+					</h:dataTable>
+
+				</h:form>
+
+
+
 			</b:jumbotron>
 		</ui:define>
 

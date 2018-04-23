@@ -14,12 +14,16 @@ import service.LoginService;
 @ManagedBean(name = "beanconseiller")
 @SessionScoped
 public class BeanConseiller {
+	
+	
 	private Login login = new Login();
 	LoginService service = new LoginService();
 	ClientService serviceClient = new ClientService();
 	Client client = new Client();
 	private Conseiller conseiller = new Conseiller();
 
+	
+	
 	public BeanConseiller() {
 		super();
 

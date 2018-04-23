@@ -7,6 +7,12 @@
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
+--
+-- Base de données :  `proxibanque`
+--
+CREATE DATABASE IF NOT EXISTS `proxibanque` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `proxibanque`;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;

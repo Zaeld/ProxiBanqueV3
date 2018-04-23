@@ -8,8 +8,10 @@ public class Login {
 
 	// Declaration des attributs caracterisant un objet de type Login
 
+	private int idLogin;
 	private String identifiant;
 	private String motDePasse;
+	private int idConseiller;
 	// Constructeur parametre
 
 	public Login() {
@@ -19,9 +21,30 @@ public class Login {
 	}
 	// Getters et Setters
 
+	
 	public String getIdentifiant() {
 		return identifiant;
 	}
+
+	public int getIdLogin() {
+		return idLogin;
+	}
+
+
+	public void setIdLogin(int idLogin) {
+		this.idLogin = idLogin;
+	}
+
+
+	public int getIdConseiller() {
+		return idConseiller;
+	}
+
+
+	public void setIdConseiller(int idConseiller) {
+		this.idConseiller = idConseiller;
+	}
+
 
 	public void setIdentifiant(String login) {
 		this.identifiant = login;
