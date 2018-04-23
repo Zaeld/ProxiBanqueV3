@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Project Name</title>
+	<meta name="author" content="The Author"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body>
+
+	<ui:composition template="/template/layout.xhtml">
+
+		<ui:define name="content">
+			<b:jumbotron>
+				<b:container>
+					<h:outputText
+						value="Bonjour #{beanlogin.conseiller.prenom} #{beanlogin.conseiller.nom} " />
+				</b:container>
+				<ul>
+					<h:panelGrid id="panel" columns="3" cellpadding="100"
+						cellspacing="100">
+						<ui:repeat value="#{beanlogin.afficherListeClients()}"
+							var="client">
+
+							<h:form>
+								<h:outputText value="#{client.nom}" />
+								<h:commandButton action="#{beanclient.modifierClient(client)}"
+									value="Modifier" styleClass="richButton" />
+								<h:commandButton action="#{beanclient.deleteClient(client)}"
+									value="Supprimer" styleClass="richButton" />
+								<h:commandButton action="#{beanclient.afficherClient(client)}"
+									value="Afficher les informations comptes" styleClass="richButton" />
+									<h:commandButton action="#{beanclient.virement(client)}"
+									value="Faire un virement" styleClass="richButton" />
+							</h:form>
+						</ui:repeat>
+					</h:panelGrid>
+
+				</ul>
+			</b:jumbotron>
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+</html>
