@@ -21,7 +21,7 @@ public class Connexion {
 			Class.forName("com.mysql.jdbc.Driver");
 			// L'objet maConnection est configur�e avec les coordonn�es de la base de donn�e
 			// de proxibanque
-			maConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/proxibanquev3", "root", "");
+			maConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/proxibanquev3", "root", "alex2616");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {

@@ -15,6 +15,7 @@ public abstract class CompteBancaire {
 	private double solde;
 	private int idClient;
 	private String typeDeCompte;
+	
 
 	// Constructeur par defaut
 	public CompteBancaire() {
@@ -61,6 +62,7 @@ public abstract class CompteBancaire {
 	}
 
 	public void setIdClient(int idClient) {
+		
 		this.idClient = idClient;
 	}
 

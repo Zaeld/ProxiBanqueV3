@@ -39,23 +39,25 @@
 						</ui:repeat> -->
 
 						<h:outputLabel value="Choisissez le compte à débiter :" />
-						<h:selectOneMenu style="width: 500px;" value="#">
+						<h:selectOneMenu style="width: 500px;"
+							value="#{beanvirement.compteDébiteur}">
 							<f:selectItems value="#{beanclient.afficherItemsComptes()}" />
 						</h:selectOneMenu>
 
 						<h:outputLabel value="Choisissez le compte à créditer :" />
-						<h:selectOneMenu style="width: 500px;" value="#">
+						<h:selectOneMenu style="width: 500px;"
+							value="#{beanvirement.compteCréditeur}">
 							<f:selectItems value="#{beanclient.afficherItemsAllComptes()}" />
 						</h:selectOneMenu>
 
 						<h:outputLabel value="Somme à transferer : " />
-						<h:inputText value="#" required="true" id="somme"
-							styleClass="inputtext" />
+						<h:inputText value="#{beanvirement.sommeVirement}" required="true"
+							id="somme" styleClass="inputtext" />
 						<h:message for="somme" />
 
 						<h:panelGroup style="display:block; text-align:center">
 							<h:commandButton value="Faire le virement"
-								action="#" />
+								action="#{beanvirement.virementCompteACompte()}" />
 
 						</h:panelGroup>
 

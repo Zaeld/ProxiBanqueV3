@@ -1,8 +1,5 @@
 package dao;
 
-import java.sql.Connection;
-
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,23 +17,7 @@ import domaine.Conseiller;
 import domaine.Client;
 
 public class ClientDAO {
-	public Statement connexion() {
-		Statement stmt = null;
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection maConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/proxibanque", "root",
-					"");
-			stmt = maConnection.createStatement();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return stmt;
-	}
-
+	
 	public boolean createClient(Client client) {
 		int i = 0;
 		boolean b = false;
